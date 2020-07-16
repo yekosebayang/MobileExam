@@ -49,7 +49,6 @@ export default (props) => {
           width={width}
           source={{ uri: restaurantDetail.image }}
         />
-
         <View style={{ ...styles.commentContainer }}>
         <TextUI size="sm" style={{ height: null }}>
             Rating: {restaurantDetail.rating}
