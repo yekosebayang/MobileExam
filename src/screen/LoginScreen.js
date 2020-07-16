@@ -16,6 +16,8 @@ import DarkOverlay from "../components/General/DarkOverlay";
 import TextUI from "../components/Text/TextUI";
 import { useDispatch, useSelector } from "react-redux";
 import AsyncStorage from "@react-native-community/async-storage";
+import { Icon } from "native-base";
+
 
 const styles = StyleSheet.create({
   container: {
@@ -61,40 +63,60 @@ export default (props) => {
   };
 
   return (
-    <ImageBackground source={LoginBG} style={{ ...styles.bgImage }}>
-      <DarkOverlay />
+    // <ImageBackground source={LoginBG} style={{ ...styles.bgImage }}>
+      // <DarkOverlay />
       <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
         <KeyboardAvoidingView
           behavior="padding"
           style={{ justifyContent: "center", flex: 1 }}
-        >
+        > 
+        <View>
+            <Text
+              style={{
+                fontSize: 50,
+                textAlign: "center",
+                fontWeight: "bold",
+                color: "#ff704d",
+              }}
+            >
+              Tomato App
+            </Text>
+            <Icon
+              type="MaterialCommunityIcons"
+              name="food"
+              style={{
+                color: "#ff704d",
+                fontSize: 100,
+                textAlign: "center",
+              }}
+            />
+          </View>
+
           <View style={{ ...styles.contentContainer }}>
-            <TextUI style={{ ...styles.welcomeText }}>
-              Welcome
-            </TextUI>
-            <TextUI style={{ ...styles.loginText }}>
-              Login to your account
-            </TextUI>
             <View
               style={{
                 borderRadius: 22,
                 paddingVertical: 11,
                 paddingHorizontal: 20,
-                justifyContent: "center",
+                justifyContent: "flex-start",
                 marginTop: 58,
+                flexDirection: "row",
               }}
             >
               <View
                 style={{
-                  backgroundColor: "white",
+                  fontSize: 17,
+                  lineHeight: 19,
+                  backgroundColor: "black",
                   opacity: 0.2,
                   borderRadius: 22,
                   ...StyleSheet.absoluteFillObject,
                 }}
-              />
-              <TextInput
+            />
+            
+            <TextInput
                 autoCapitalize="none"
-                placeholderTextColor="lightgrey"
+                placeholderTextColor="black"
                 style={{
                   fontSize: 17,
                   color: "white",
@@ -105,15 +127,17 @@ export default (props) => {
                 onChangeText={(text) => setUsernameInput(text)}
               />
             </View>
+
             <Button
               onPress={loginBtnHandler}
               containerStyle={{ marginTop: 40 }}
               size="lg"
-            >LOGIN
+            >
+              LOGIN
             </Button>
           </View>
+          
         </KeyboardAvoidingView>
       </TouchableWithoutFeedback>
-    </ImageBackground>
   );
 };
