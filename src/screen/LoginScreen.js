@@ -51,13 +51,12 @@ export default (props) => {
         "userData",
         JSON.stringify({
           username : usernameInput,
-          login: true
         })
       )
-       return dispatch({
-            type: "USER_LOGIN",
-            payload: {login:true},
-          });
+    return dispatch({
+      type: "USER_LOGIN",
+      payload: {username : usernameInput},
+      });
     }
   };
 
@@ -106,7 +105,6 @@ export default (props) => {
                 onChangeText={(text) => setUsernameInput(text)}
               />
             </View>
-            
             <Button
               onPress={loginBtnHandler}
               containerStyle={{ marginTop: 40 }}

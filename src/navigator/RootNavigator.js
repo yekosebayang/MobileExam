@@ -34,7 +34,7 @@ export default () => {
     <NavigationContainer>
       <StatusBar style="light" />
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {userSelector.login ? (
+        {userSelector.username ? (
           <Stack.Screen options={{ animationEnabled: false }} name="MainTab" component={MainTab}/>
         ) : (
           <Stack.Screen name="LogIn" component={LoginScreen}/>

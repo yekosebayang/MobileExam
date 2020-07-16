@@ -1,6 +1,5 @@
 const init_state = {
     username: "",
-    login :false
   };
   
   export default (state = init_state, action) => {
@@ -9,7 +8,7 @@ const init_state = {
         // return { ...state, login: true, username: action.payload };
         return { ...state, ...action.payload };
       case "USER_LOGOUT":
-        return { ...init_state, login: false };
+        return { ...init_state, };
       default:
         return { ...state };
     }
